@@ -8,12 +8,11 @@ class PostCards extends StatelessWidget {
     return Card(
       elevation: 3,
       child: Container(
-        
         height: 30,
         width: 30,
         decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(56)),
-          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(8)),
+          color: Color.fromARGB(16, 147, 147, 147),
         ),
       ),
     );

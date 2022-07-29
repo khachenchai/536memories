@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.lightBlue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const PostDetailPage(),
+      home: const IndexPage(),
     );
   }
 }

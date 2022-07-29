@@ -9,16 +9,11 @@ class PostDetailPage extends StatefulWidget {
 
 class _PostDetailPageState extends State<PostDetailPage> {
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
   bool isLike = false;
   int likeCount = 1;
   int commentCount = 5;
   final commentCtl = TextEditingController();
+  String postOwner = "Khachenchai";
   List comments = [
     {
       "name": "นายสมชาย สมชาย",
@@ -84,7 +79,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
       body: Row(
         children: [
           Expanded(
-            child: Container(
+            child: SizedBox(
               // color: Colors.red,
               width: double.infinity,
               height: double.infinity,
@@ -105,7 +100,10 @@ class _PostDetailPageState extends State<PostDetailPage> {
                         ),
                         width: double.infinity,
                         height: MediaQuery.of(context).size.height / 2,
-                        child: Image.asset("assets/kong.jpg", fit: BoxFit.none,),
+                        child: Hero(
+                          tag: 'image1',
+                          child: Image.asset("assets/kong.jpg", fit: BoxFit.none,)
+                        ),
                       ),
                     ),
                     const SizedBox(height: 12),
@@ -115,6 +113,15 @@ class _PostDetailPageState extends State<PostDetailPage> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: const [
                           Text("หล่อเท่ห์กว่านี้ไม่มีอีกแล้ว", style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 12),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text("โพสต์โดย $postOwner", style: const TextStyle(fontSize: 16),),
                         ],
                       ),
                     ),
