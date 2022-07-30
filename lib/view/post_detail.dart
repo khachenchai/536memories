@@ -1,3 +1,4 @@
+import 'package:blt/models/ex.dart';
 import 'package:flutter/material.dart';
 
 class PostDetailPage extends StatefulWidget {
@@ -125,6 +126,15 @@ class _PostDetailPageState extends State<PostDetailPage> {
                         ],
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 12),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: const [
+                          Text("โพสต์เมื่อ 12 ก.ค. 65", style: TextStyle(fontSize: 12, color: Colors.grey),),
+                        ],
+                      ),
+                    ),
                     const SizedBox(height: 1),
                     Container(
                       padding: const EdgeInsets.only(right: 12, left: 12),
@@ -204,14 +214,26 @@ class _PostDetailPageState extends State<PostDetailPage> {
                     leading: const CircleAvatar(
                       // backgroundImage: NetworkImage("https://i.pravatar.cc/300"),
                     ),
-                    title: const TextField(
-                      decoration: InputDecoration(
+                    title: TextField(
+                      controller: commentCtl,
+                      decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: "แสดงความคิดเห็น",
                       ),
                     ),
                     trailing: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          comments.add(
+                            Ex(
+                              name: 'Anda',
+                              comment: commentCtl.text
+                            ).toJson()
+                          );
+                        });
+                        commentCtl.clear();
+                        // print(commentCtl.text);
+                      },
                       icon: const Icon(
                         Icons.send_sharp, 
                         size: 28,

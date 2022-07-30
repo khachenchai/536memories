@@ -1,3 +1,5 @@
+import 'package:blt/view/add_post.dart';
+import 'package:blt/view/post_detail.dart';
 import 'package:blt/widgets/contents.dart';
 import 'package:flutter/material.dart';
 
@@ -65,7 +67,7 @@ class _IndexPageState extends State<IndexPage> {
       ),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AddPostPage())),
         child: const Icon(Icons.add, size: 28, color: Colors.white),
       ),
     );
