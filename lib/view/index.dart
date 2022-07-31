@@ -67,7 +67,7 @@ class _IndexPageState extends State<IndexPage> {
       ),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () => () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AddPostPage())),
+        onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AddPostPage())),
         child: const Icon(Icons.add, size: 28, color: Colors.white),
       ),
     );

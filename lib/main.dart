@@ -1,3 +1,4 @@
+import 'package:blt/view/add_post.dart';
 import 'package:blt/view/index.dart';
 import 'package:blt/view/post_detail.dart';
 import 'package:blt/view/signin.dart';
@@ -10,9 +11,10 @@ final Map<String, WidgetBuilder> routes = {
   '/signin': (context) => const SignInPage(),
   '/signup': (context) => const SignUpPage(),
   '/post_detail': (context) => const PostDetailPage(),
+  '/add_post' :(context) => const AddPostPage()
 };
 
-const String initialRoute = '/';
+const String initialRoute = '/add_post';
 
 
 void main() {
